@@ -32,6 +32,7 @@
                             </td>
                             <td class="px-4 py-3 text-tauf-gray">{{ $project->location ?: '—' }}</td>
                             <td class="px-4 py-3"><span class="rounded-full px-2.5 py-1 text-[11px] font-bold {{ $project->status === 'publie' ? 'bg-tauf-green-light text-tauf-green' : 'bg-gray-100 text-gray-500' }}">{{ ucfirst($project->status) }}</span></td>
+                            <td class="px-4 py-3 text-tauf-gray">{{ number_format($project->views, 0, ',', ' ') }}</td>
                             <td class="px-4 py-3">
                                 <div class="flex justify-end gap-2">
                                     <a href="{{ route('projects.show', $project) }}" target="_blank" class="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold hover:border-tauf-green hover:text-tauf-green">Voir</a>
@@ -44,7 +45,7 @@
                             </td>
                         </tr>
                     @empty
-                        <tr><td colspan="4" class="px-4 py-10 text-center text-tauf-gray">Aucune réalisation.</td></tr>
+                        <tr><td colspan="5" class="px-4 py-10 text-center text-tauf-gray">Aucune réalisation.</td></tr>
                     @endforelse
                 </tbody>
             </table>
