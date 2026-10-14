@@ -9,10 +9,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        return view('front.events.index', [
-            'upcoming' => Event::published()->upcoming()->get(),
-            'past' => Event::published()->past()->paginate(9),
-        ]);
+        return redirect(route('posts.index'));
     }
 
     public function show(Event $event)

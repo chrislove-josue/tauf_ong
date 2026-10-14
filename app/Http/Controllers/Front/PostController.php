@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -23,9 +24,11 @@ class PostController extends Controller
             ->paginate(9)
             ->withQueryString();
 
-        return view('front.posts.index', [
+        return view('front.actualites.index', [
             'posts' => $posts,
             'categories' => \App\Models\Category::orderBy('order')->get(),
+            'upcoming' => Event::published()->upcoming()->get(),
+            'past' => Event::published()->past()->paginate(9),
         ]);
     }
 
