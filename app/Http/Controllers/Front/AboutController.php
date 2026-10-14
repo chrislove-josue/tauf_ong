@@ -22,21 +22,21 @@ class AboutController extends Controller
 
     public function history()
     {
-        return redirect()->route('about.index')->fragment('histoire');
+        return redirect(route('about.index').'#histoire');
     }
 
     public function mission()
     {
-        return redirect()->route('about.index')->fragment('mission');
+        return redirect(route('about.index').'#mission');
     }
 
     public function organisation()
     {
-        return redirect()->route('about.index')->fragment('organisation');
+        return redirect(route('about.index').'#organisation');
     }
 
     public function partners()
     {
-        return redirect()->route('about.index')->fragment('partenaires');
+        return redirect(route('about.index').'#partenaires');
     }
 }
