@@ -197,7 +197,6 @@ class DatabaseSeeder extends Seeder
                     'body' => $data['body'],
                     'status' => 'publie',
                     'published_at' => now()->subDays($i * 3 + 1),
-                    'views' => rand(40, 400),
                 ],
             );
         }
