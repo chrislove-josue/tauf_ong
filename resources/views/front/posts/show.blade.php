@@ -27,6 +27,7 @@
                     @if ($post->author)
                         <span class="inline-flex items-center gap-1.5"><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1"/></svg>{{ $post->author->name }}</span>
                     @endif
+                    <x-front.views :count="$post->views" />
                 </div>
 
                 @if ($post->cover)

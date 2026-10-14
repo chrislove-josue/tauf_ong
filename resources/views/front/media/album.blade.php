@@ -10,6 +10,9 @@
         :crumbs="['Médiathèque' => route('media.index'), $album->name => null]" />
 
     <section class="container-tauf py-16">
+        <div class="mb-6 text-sm text-tauf-gray">
+            <x-front.views :count="$album->views" />
+        </div>
         @if ($album->images->isEmpty())
             <p class="rounded-2xl bg-tauf-cream p-8 text-center text-tauf-gray">Aucune photo dans cet album.</p>
         @else

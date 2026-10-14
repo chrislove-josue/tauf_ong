@@ -14,6 +14,9 @@
         :crumbs="['Programmes' => route('programs.index'), $program->title => null]" />
 
     <section class="container-tauf py-16">
+        <div class="mb-6 text-sm text-tauf-gray">
+            <x-front.views :count="$program->views" />
+        </div>
         <div class="grid gap-12 lg:grid-cols-3">
             <div class="lg:col-span-2">
                 @if ($program->cover)

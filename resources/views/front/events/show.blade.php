@@ -40,6 +40,13 @@
                             </div>
                         </div>
                     @endif
+                    <div class="flex items-center gap-3 rounded-2xl bg-tauf-green-light px-5 py-3">
+                        <svg class="h-6 w-6 text-tauf-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <div>
+                            <p class="text-xs text-tauf-gray">Vues</p>
+                            <p class="text-sm font-bold text-tauf-green-dark">{{ number_format($event->views, 0, ',', ' ') }}</p>
+                        </div>
+                    </div>
                 </div>
 
                 @if ($event->cover)

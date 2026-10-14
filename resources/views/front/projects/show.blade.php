@@ -67,6 +67,7 @@
                         @if ($project->ended_at)
                             <div class="flex justify-between gap-4"><dt class="text-tauf-gray">Fin</dt><dd class="font-semibold text-tauf-ink">{{ french_date($project->ended_at) }}</dd></div>
                         @endif
+                        <div class="flex justify-between gap-4"><dt class="text-tauf-gray">Vues</dt><dd class="font-semibold text-tauf-ink">{{ number_format($project->views, 0, ',', ' ') }}</dd></div>
                     </dl>
                 </div>
                 @if ($others->isNotEmpty())
