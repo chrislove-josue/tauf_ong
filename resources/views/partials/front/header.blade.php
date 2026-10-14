@@ -51,11 +51,11 @@
                     <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div data-dropdown-menu class="absolute left-0 top-full z-50 hidden w-64 overflow-hidden rounded-2xl border border-gray-100 bg-white py-2 shadow-xl">
-                    <a href="{{ route('about.index') }}" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Présentation de l'ONG</a>
-                    <a href="{{ route('about.history') }}" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Notre histoire</a>
-                    <a href="{{ route('about.mission') }}" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Mission, vision, valeurs</a>
-                    <a href="{{ route('about.organisation') }}" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Organisation & gouvernance</a>
-                    <a href="{{ route('about.partners') }}" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Nos partenaires</a>
+                    <a href="{{ route('about.index') }}#presentation" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Présentation de l'ONG</a>
+                    <a href="{{ route('about.index') }}#histoire" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Notre histoire</a>
+                    <a href="{{ route('about.index') }}#mission" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Mission, vision, valeurs</a>
+                    <a href="{{ route('about.index') }}#organisation" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Organisation & gouvernance</a>
+                    <a href="{{ route('about.index') }}#partenaires" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Nos partenaires</a>
                 </div>
             </div>
 
@@ -100,11 +100,11 @@
             <a href="{{ route('home') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Accueil</a>
             <div class="border-t border-gray-100 pt-1"></div>
             <p class="px-4 pt-2 text-xs font-bold uppercase tracking-wider text-gray-400">À propos</p>
-            <a href="{{ route('about.index') }}" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Présentation</a>
-            <a href="{{ route('about.history') }}" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Notre histoire</a>
-            <a href="{{ route('about.mission') }}" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Mission, vision, valeurs</a>
-            <a href="{{ route('about.organisation') }}" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Organisation & gouvernance</a>
-            <a href="{{ route('about.partners') }}" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Nos partenaires</a>
+            <a href="{{ route('about.index') }}#presentation" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Présentation</a>
+            <a href="{{ route('about.index') }}#histoire" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Notre histoire</a>
+            <a href="{{ route('about.index') }}#mission" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Mission, vision, valeurs</a>
+            <a href="{{ route('about.index') }}#organisation" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Organisation & gouvernance</a>
+            <a href="{{ route('about.index') }}#partenaires" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Nos partenaires</a>
             <div class="border-t border-gray-100 pt-1"></div>
             <a href="{{ route('programs.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Programmes</a>
             <a href="{{ route('projects.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Réalisations</a>

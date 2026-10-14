@@ -78,10 +78,6 @@ class FrontPagesTest extends TestCase
         return array_map(fn ($r) => [$r], [
             'home',
             'about.index',
-            'about.history',
-            'about.mission',
-            'about.organisation',
-            'about.partners',
             'programs.index',
             'projects.index',
             'posts.index',
