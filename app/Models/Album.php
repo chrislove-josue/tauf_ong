@@ -3,14 +3,15 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\HasViews;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['name', 'slug', 'description', 'cover', 'order'])]
+#[Fillable(['name', 'slug', 'description', 'cover', 'order', 'views'])]
 class Album extends Model
 {
-    use HasSlug;
+    use HasSlug, HasViews;
 
     protected $slugSource = 'name';
 

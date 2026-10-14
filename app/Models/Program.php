@@ -3,17 +3,18 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\HasViews;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 #[Fillable([
     'title', 'slug', 'subtitle', 'excerpt', 'body', 'cover', 'icon', 'color',
-    'featured', 'status', 'order', 'meta_title', 'meta_description',
+    'featured', 'status', 'order', 'meta_title', 'meta_description', 'views',
 ])]
 class Program extends Model
 {
-    use HasSlug;
+    use HasSlug, HasViews;
 
     protected function casts(): array
     {

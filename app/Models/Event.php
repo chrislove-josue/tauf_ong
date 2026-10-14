@@ -3,16 +3,17 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\HasViews;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 #[Fillable([
-    'title', 'slug', 'excerpt', 'body', 'cover', 'location', 'starts_at', 'ends_at', 'status', 'featured',
+    'title', 'slug', 'excerpt', 'body', 'cover', 'location', 'starts_at', 'ends_at', 'status', 'featured', 'views',
 ])]
 class Event extends Model
 {
-    use HasSlug;
+    use HasSlug, HasViews;
 
     protected function casts(): array
     {
