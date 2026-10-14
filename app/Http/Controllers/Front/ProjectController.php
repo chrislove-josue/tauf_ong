@@ -18,6 +18,8 @@ class ProjectController extends Controller
     {
         abort_unless($project->status === 'publie', 404);
 
+        $project->recordView();
+
         return view('front.projects.show', [
             'project' => $project,
             'others' => Project::published()->whereKeyNot($project->id)->latest()->take(3)->get(),

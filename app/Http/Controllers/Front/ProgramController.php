@@ -18,6 +18,8 @@ class ProgramController extends Controller
     {
         abort_unless($program->status === 'publie', 404);
 
+        $program->recordView();
+
         return view('front.programs.show', [
             'program' => $program,
             'others' => Program::published()->whereKeyNot($program->id)->orderBy('order')->take(3)->get(),

@@ -19,6 +19,8 @@ class EventController extends Controller
     {
         abort_unless($event->status === 'publie', 404);
 
+        $event->recordView();
+
         return view('front.events.show', [
             'event' => $event,
             'others' => Event::published()->upcoming()->whereKeyNot($event->id)->take(3)->get(),

@@ -33,7 +33,7 @@ class PostController extends Controller
     {
         abort_unless($post->status === 'publie', 404);
 
-        $post->increment('views');
+        $post->recordView();
 
         return view('front.posts.show', [
             'post' => $post->load('category', 'author'),

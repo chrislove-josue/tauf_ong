@@ -19,6 +19,8 @@ class MediaController extends Controller
 
     public function album(Album $album)
     {
+        $album->recordView();
+
         return view('front.media.album', [
             'album' => $album->load('images'),
             'others' => Album::whereKeyNot($album->id)->orderBy('order')->take(6)->get(),
