@@ -206,9 +206,9 @@ class DatabaseSeeder extends Seeder
     protected function events(): void
     {
         $events = [
-            ['title' => 'Grande finale de la Dictée PGL Bénin 2026', 'excerpt' => "La finale nationale de la Dictée PGL Bénin.", 'location' => 'Palais des Congrès, Cotonou', 'starts_at' => now()->addDays(20)->setTime(9, 0), 'ends_at' => now()->addDays(20)->setTime(14, 0)],
-            ['title' => 'Atelier de formation des enseignants', 'excerpt' => 'Renforcement des capacités des encadreurs.', 'location' => 'Cotonou', 'starts_at' => now()->addDays(35)->setTime(8, 30), 'ends_at' => now()->addDays(35)->setTime(16, 0)],
-            ['title' => 'Journée de lecture dans les écoles', 'excerpt' => "Une journée dédiée au livre et à la lecture.", 'location' => 'Écoles partenaires', 'starts_at' => now()->subDays(15)->setTime(9, 0), 'ends_at' => now()->subDays(15)->setTime(15, 0)],
+            ['title' => 'Grande finale de la Dictée PGL Bénin 2026', 'excerpt' => "La finale nationale de la Dictée PGL Bénin.", 'location' => 'Palais des Congrès, Cotonou', 'starts_at' => now()->addDays(20)->setTime(9, 0), 'ends_at' => now()->addDays(20)->setTime(14, 0), 'views' => rand(300, 1200)],
+            ['title' => 'Atelier de formation des enseignants', 'excerpt' => 'Renforcement des capacités des encadreurs.', 'location' => 'Cotonou', 'starts_at' => now()->addDays(35)->setTime(8, 30), 'ends_at' => now()->addDays(35)->setTime(16, 0), 'views' => rand(150, 700)],
+            ['title' => 'Journée de lecture dans les écoles', 'excerpt' => "Une journée dédiée au livre et à la lecture.", 'location' => 'Écoles partenaires', 'starts_at' => now()->subDays(15)->setTime(9, 0), 'ends_at' => now()->subDays(15)->setTime(15, 0), 'views' => rand(100, 600)],
         ];
 
         foreach ($events as $event) {
@@ -225,7 +225,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($albums as $i => $album) {
-            $created = Album::updateOrCreate(['slug' => Str::slug($album['name'])], $album + ['order' => $i]);
+            $created = Album::updateOrCreate(['slug' => Str::slug($album['name'])], $album + ['order' => $i, 'views' => rand(100, 800)]);
 
             for ($j = 1; $j <= 4; $j++) {
                 Media::updateOrCreate(
