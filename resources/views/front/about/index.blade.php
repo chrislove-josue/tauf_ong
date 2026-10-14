@@ -24,7 +24,7 @@
                 <span class="eyebrow"><span class="h-px w-8 bg-tauf-gold"></span>Présentation</span>
                 <div class="prose-tauf mt-4">
                     @if ($page && $page->body)
-                        {!! $page->body !!}\n                    @else
+                        {!! $page->body !!}
                         <p>L'ONG TAUF est une organisation non gouvernementale béninoise engagée dans la promotion de l'éducation, de la langue française et de la culture, notamment à travers l'organisation de la « Dictée PGL Bénin » et d'autres programmes à vocation éducative, culturelle et sociale.</p>
                         <p>À travers ses actions de terrain, ses partenariats et ses réalisations, l'ONG TAUF œuvre pour l'épanouissement des jeunes et le rayonnement de la francophonie au Bénin.</p>
                     @endif
@@ -56,7 +56,7 @@
             <span class="eyebrow"><span class="h-px w-8 bg-tauf-gold"></span>Notre histoire</span>
             <div class="prose-tauf mx-auto mt-4 max-w-3xl">
                 @if ($history && $history->body)
-                    {!! $history->body !!}\n                @else
+                    {!! $history->body !!}
                     <p>Fondée au Bénin, l'ONG TAUF est née de la volonté d'accompagner les jeunes dans leur parcours éducatif et de promouvoir la langue française à travers des initiatives fédératrices comme la « Dictée PGL Bénin ».</p>
                     <p>Au fil des années, l'organisation a développé des programmes éducatifs, culturels et sociaux, noué des partenariats et fédéré des milliers de participants autour de la passion des mots et de la connaissance.</p>
                     <h2>Nos grandes étapes</h2>
@@ -75,7 +75,8 @@
         <span class="eyebrow"><span class="h-px w-8 bg-tauf-gold"></span>Mission, vision, valeurs</span>
         <div class="mt-4">
             @if ($mission && $mission->body)
-                <div class="prose-tauf max-w-4xl">{!! $mission->body !!}</div>\n            @else
+                <div class="prose-tauf max-w-4xl">{!! $mission->body !!}</div>
+            @else
                 <div class="grid max-w-4xl gap-6 sm:grid-cols-2">
                     <div class="card p-6">
                         <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-tauf-green-light text-tauf-green">
@@ -96,7 +97,7 @@
                 <div class="mt-10">
                     <h2 class="section-title mb-6">Nos valeurs</h2>
                     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        @foreach (array_filter(array_map('trim', explode("\n", tauf_setting('about_values', "Éducation\nSolidarité\nExcellence\nFrancophonie\nIntégrity")))) as $i => $value)
+                        @foreach (array_filter(array_map('trim', explode("\n", tauf_setting('about_values', "Éducation\nSolidarité\nExcellence\nFrancophonie\nIntégrité")))) as $i => $value)
                             <div class="flex items-center gap-3 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
                                 <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-tauf-green text-sm font-bold text-white">{{ $i + 1 }}</span>
                                 <span class="font-semibold text-tauf-ink">{{ $value }}</span>

@@ -13,35 +13,30 @@ class AboutController extends Controller
     {
         return view('front.about.index', [
             'page' => Page::published()->where('slug', 'a-propos')->first(),
-            'team' => TeamMember::active()->get(),
+            'history' => Page::published()->where('slug', 'notre-histoire')->first(),
+            'mission' => Page::published()->where('slug', 'mission-vision-valeurs')->first(),
+            'members' => TeamMember::active()->get()->groupBy('group'),
+            'partners' => Partner::active()->get()->groupBy('category'),
         ]);
     }
 
     public function history()
     {
-        return view('front.about.history', [
-            'page' => Page::published()->where('slug', 'notre-histoire')->first(),
-        ]);
+        return redirect()->route('about.index')->fragment('histoire');
     }
 
     public function mission()
     {
-        return view('front.about.mission', [
-            'page' => Page::published()->where('slug', 'mission-vision-valeurs')->first(),
-        ]);
+        return redirect()->route('about.index')->fragment('mission');
     }
 
     public function organisation()
     {
-        return view('front.about.organisation', [
-            'members' => TeamMember::active()->get()->groupBy('group'),
-        ]);
+        return redirect()->route('about.index')->fragment('organisation');
     }
 
     public function partners()
     {
-        return view('front.about.partners', [
-            'partners' => Partner::active()->get()->groupBy('category'),
-        ]);
+        return redirect()->route('about.index')->fragment('partenaires');
     }
 }
