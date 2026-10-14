@@ -76,7 +76,6 @@
 
             <a href="{{ route("projects.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Réalisations</a>
             <a href="{{ route("posts.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Actualités</a>
-            <a href="{{ route("events.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Événements</a>
             <a href="{{ route("media.index") }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is("media.*") ? "text-tauf-green" : "text-tauf-ink hover:text-tauf-green" }}">Galerie</a>
             <a href="{{ route('contact') }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is('contact') ? 'text-tauf-green' : 'text-tauf-ink hover:text-tauf-green' }}">Contact</a>
         </nav>
