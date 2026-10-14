@@ -24,6 +24,7 @@
                     <img src="{{ asset('images/placeholder.svg') }}" alt="" class="h-full w-full object-cover">
                 @endif
                 <div class="absolute inset-0 bg-gradient-to-r from-tauf-green-dark/95 via-tauf-green-dark/80 to-tauf-green/40"></div>
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px); background-size: 28px 28px;"></div>
             </div>
         @empty
         @endforelse

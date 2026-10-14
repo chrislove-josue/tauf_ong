@@ -9,8 +9,9 @@
     ];
 @endphp
 
-<footer class="mt-20 bg-tauf-green-dark text-white/80">
-    <div class="container-tauf grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+<footer class="relative mt-20 overflow-hidden bg-tauf-green-dark text-white/80">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px); background-size: 28px 28px;"></div>
+    <div class="container-tauf relative grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
             <div class="flex items-center gap-3">
                 <img src="{{ asset('logo.jpg') }}" alt="{{ $siteName ?? 'ONG TAUF' }}" class="h-16 w-16 rounded-full object-cover ring-2 ring-tauf-gold">
