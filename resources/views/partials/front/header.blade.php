@@ -1,4 +1,4 @@
-@php
+﻿@php
     $is = fn (string ...$names) => request()->routeIs(...$names);
 @endphp
 
@@ -75,10 +75,10 @@
                 </div>
             </div>
 
-            <a href="{{ route('projects.index') }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is('projects.*') ? 'text-tauf-green' : 'text-tauf-ink hover:text-tauf-green' }}">Réalisations</a>
-            <a href="{{ route('posts.index') }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is('posts.*') ? 'text-tauf-green' : 'text-tauf-ink hover:text-tauf-green' }}">Actualités</a>
-            <a href="{{ route('events.index') }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is('events.*') ? 'text-tauf-green' : 'text-tauf-ink hover:text-tauf-green' }}">Événements</a>
-            <a href="{{ route('media.index') }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is('media.*') ? 'text-tauf-green' : 'text-tauf-ink hover:text-tauf-green' }}">Médiathèque</a>
+            <a href="{{ route("projects.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Réalisations</a>
+            <a href="{{ route("posts.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Actualités</a>
+            <a href="{{ route("events.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Événements</a>
+            <a href="{{ route("media.index") }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is("media.*") ? "text-tauf-green" : "text-tauf-ink hover:text-tauf-green" }}">Galerie</a>
             <a href="{{ route('contact') }}" class="rounded-full px-3 py-2 text-sm font-semibold {{ $is('contact') ? 'text-tauf-green' : 'text-tauf-ink hover:text-tauf-green' }}">Contact</a>
         </nav>
 
@@ -110,7 +110,7 @@
             <a href="{{ route('projects.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Réalisations</a>
             <a href="{{ route('posts.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Actualités</a>
             <a href="{{ route('events.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Événements</a>
-            <a href="{{ route('media.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Médiathèque</a>
+            <a href="{{ route("media.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Galerie</a>
             <a href="{{ route('join') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Nous rejoindre</a>
             <a href="{{ route('contact') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Contact</a>
             <a href="{{ route('support') }}" class="btn-gold mt-2 w-full">Faire un don</a>

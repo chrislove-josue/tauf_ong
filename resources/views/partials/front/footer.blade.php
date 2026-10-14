@@ -1,4 +1,4 @@
-@php
+﻿@php
     $socials = [
         'facebook_url' => ['icon' => 'facebook', 'label' => 'Facebook'],
         'instagram_url' => ['icon' => 'instagram', 'label' => 'Instagram'],
@@ -41,7 +41,7 @@
                 <li><a href="{{ route('projects.index') }}" class="transition hover:text-tauf-gold">Nos réalisations</a></li>
                 <li><a href="{{ route('posts.index') }}" class="transition hover:text-tauf-gold">Actualités</a></li>
                 <li><a href="{{ route('events.index') }}" class="transition hover:text-tauf-gold">Événements</a></li>
-                <li><a href="{{ route('media.index') }}" class="transition hover:text-tauf-gold">Médiathèque</a></li>
+                <li><a href="{{ route("media.index") }}" class="transition hover:text-tauf-gold">Galerie</a></li>
                 <li><a href="{{ route('join') }}" class="transition hover:text-tauf-gold">Nous rejoindre</a></li>
             </ul>
         </div>
