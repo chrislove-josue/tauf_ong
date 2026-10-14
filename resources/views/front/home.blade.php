@@ -228,28 +228,38 @@
                 @if ($testimonials->isEmpty())
                     <p class="rounded-2xl bg-white p-6 text-sm text-tauf-gray">Les témoignages seront bientôt disponibles.</p>
                 @else
-                    @php $t = $testimonials->first(); @endphp
-                    <div class="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
-                        <blockquote class="flex h-full flex-col justify-between">
-                            <div>
-                                <svg class="h-10 w-10 text-tauf-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h4v4H9c0 2 0 3 2 4v2c-3 0-4-2-4-5V7zm8 0h4v4h-2c0 2 0 3 2 4v2c-3 0-4-2-4-5V7z"/></svg>
-                                <p class="mt-6 text-base leading-relaxed text-tauf-ink">{{ $t->content }}</p>
-                            </div>
-                            <footer class="mt-8 flex items-center gap-4">
-                                <img src="{{ upload_url($t->photo, 'images/placeholder.svg') }}" alt="{{ $t->name }}" class="h-12 w-12 rounded-full object-cover ring-2 ring-tauf-gold/30">
-                                <div>
-                                    <p class="font-display text-base font-bold text-tauf-ink">{{ $t->name }}</p>
-                                    @if ($t->role)
-                                        <p class="text-sm text-tauf-gray">{{ $t->role }}</p>
-                                    @endif
+                    <div data-slider class="grid">
+                        @foreach ($testimonials as $t)
+                            <div data-slide class="col-start-1 row-start-1 transition-opacity duration-700 {{ $loop->first ? '' : 'pointer-events-none opacity-0' }}">
+                                <div class="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
+                                    <blockquote class="flex h-full flex-col justify-between">
+                                        <div>
+                                            <svg class="h-10 w-10 text-tauf-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h4v4H9c0 2 0 3 2 4v2c-3 0-4-2-4-5V7zm8 0h4v4h-2c0 2 0 3 2 4v2c-3 0-4-2-4-5V7z"/></svg>
+                                            <p class="mt-6 text-base leading-relaxed text-tauf-ink">{{ $t->content }}</p>
+                                        </div>
+                                        <footer class="mt-8 flex items-center gap-4">
+                                            <img src="{{ upload_url($t->photo, 'images/placeholder.svg') }}" alt="{{ $t->name }}" class="h-12 w-12 rounded-full object-cover ring-2 ring-tauf-gold/30">
+                                            <div>
+                                                <p class="font-display text-base font-bold text-tauf-ink">{{ $t->name }}</p>
+                                                @if ($t->role)
+                                                    <p class="text-sm text-tauf-gray">{{ $t->role }}</p>
+                                                @endif
+                                            </div>
+                                        </footer>
+                                    </blockquote>
                                 </div>
-                            </footer>
-                        </blockquote>
+                            </div>
+                        @endforeach
                     </div>
                 @endif
             </div>
         </div>
     </section>
+
+    {{-- Soutien --}}
+    <section class="bg-tauf-green-dark py-16 text-center text-white sm:py-20">
+        <div class="container-tauf">
+            <div class="mx-auto max-w-2xl">
                 <h2 class="font-display text-3xl font-extrabold sm:text-4xl">Soutenez nos actions</h2>
                 <p class="mx-auto mt-4 max-w-2xl text-white/85">Votre don, votre bénévolat ou votre partenariat nous permet de faire grandir l'éducation et la francophonie au Bénin.</p>
                 <div class="mt-8 flex flex-wrap justify-center gap-3">
