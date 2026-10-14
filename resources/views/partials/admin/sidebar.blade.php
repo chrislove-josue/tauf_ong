@@ -11,7 +11,7 @@
             ['route' => 'admin.programs.index', 'pattern' => 'admin.programs.*', 'label' => 'Programmes', 'icon' => 'M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8z'],
             ['route' => 'admin.projects.index', 'pattern' => 'admin.projects.*', 'label' => 'Réalisations', 'icon' => 'M3 21h18M5 21V7l7-4 7 4v14'],
             ['route' => 'admin.events.index', 'pattern' => 'admin.events.*', 'label' => 'Événements', 'icon' => 'M3 4h18v18H3zM16 2v4M8 2v4M3 10h18'],
-            ['route' => 'admin.pages.index', 'pattern' => 'admin.pages.*', 'label' => 'Pages', 'icon' => 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6'],
+
         ]],
         ['header' => 'Médiathèque', 'items' => [
             ['route' => 'admin.albums.index', 'pattern' => 'admin.albums.*', 'label' => 'Albums', 'icon' => 'M3 5h18v14H3zM3 15l5-5 4 4 3-3 6 6'],
