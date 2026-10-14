@@ -54,6 +54,25 @@ class FrontPagesTest extends TestCase
         $this->get('/programmes/slug-inexistant')->assertNotFound();
     }
 
+    public function test_viewing_content_increments_views(): void
+    {
+        $cases = [
+            ['programs.show', Program::first()],
+            ['projects.show', Project::first()],
+            ['posts.show', Post::first()],
+            ['events.show', Event::first()],
+            ['media.album', Album::first()],
+        ];
+
+        foreach ($cases as [$route, $model]) {
+            $before = $model->views;
+
+            $this->get(route($route, $model))->assertOk();
+
+            $this->assertSame($before + 1, $model->fresh()->views, "Views not incremented for [{$route}]");
+        }
+    }
+
     public static function staticRoutes(): array
     {
         return array_map(fn ($r) => [$r], [
