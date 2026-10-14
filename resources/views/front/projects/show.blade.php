@@ -69,6 +69,9 @@
                         @endif
                         <div class="flex justify-between gap-4"><dt class="text-tauf-gray">Vues</dt><dd class="font-semibold text-tauf-ink">{{ number_format($project->views, 0, ',', ' ') }}</dd></div>
                     </dl>
+                    <div class="mt-5">
+                        <x-front.share :title="$project->title" />
+                    </div>
                 </div>
                 @if ($others->isNotEmpty())
                     <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">

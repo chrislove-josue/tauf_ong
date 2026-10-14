@@ -36,12 +36,8 @@
 
                 <div class="prose-tauf">{!! $post->body !!}</div>
 
-                <div class="mt-10 flex items-center gap-3 border-t border-gray-100 pt-6">
-                    <span class="text-sm font-semibold text-tauf-ink">Partager :</span>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank" rel="noopener" class="flex h-9 w-9 items-center justify-center rounded-full bg-tauf-green-light text-tauf-green transition hover:bg-tauf-green hover:text-white"><svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><use href="#icon-facebook"/></svg></a>
-                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($post->title) }}" target="_blank" rel="noopener" class="flex h-9 w-9 items-center justify-center rounded-full bg-tauf-green-light text-tauf-green transition hover:bg-tauf-green hover:text-white"><svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><use href="#icon-twitter"/></svg></a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(url()->current()) }}" target="_blank" rel="noopener" class="flex h-9 w-9 items-center justify-center rounded-full bg-tauf-green-light text-tauf-green transition hover:bg-tauf-green hover:text-white"><svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><use href="#icon-linkedin"/></svg></a>
-                    <a href="https://wa.me/?text={{ urlencode($post->title.' '.url()->current()) }}" target="_blank" rel="noopener" class="flex h-9 w-9 items-center justify-center rounded-full bg-tauf-green-light text-tauf-green transition hover:bg-tauf-green hover:text-white"><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 21l2-5.1A8.5 8.5 0 1121 11.5z"/></svg></a>
+                <div class="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-gray-100 pt-6">
+                    <x-front.share :title="$post->title" />
                 </div>
             </article>
 

@@ -23,6 +23,10 @@
                     <img src="{{ upload_url($program->cover) }}" alt="{{ $program->title }}" class="mb-8 w-full rounded-3xl object-cover">
                 @endif
                 <div class="prose-tauf">{!! $program->body ?: '<p>'.e($program->excerpt).'</p>' !!}</div>
+
+                <div class="mt-8">
+                    <x-front.share :title="$program->title" />
+                </div>
             </div>
 
             <aside class="space-y-4">

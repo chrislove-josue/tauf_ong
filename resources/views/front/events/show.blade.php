@@ -54,6 +54,10 @@
                 @endif
 
                 <div class="prose-tauf">{!! $event->body ?: '<p>'.e($event->excerpt).'</p>' !!}</div>
+
+                <div class="mt-8">
+                    <x-front.share :title="$event->title" />
+                </div>
             </article>
 
             <aside class="space-y-6">
