@@ -17,6 +17,7 @@
                         <th class="px-4 py-3 font-semibold">Projet</th>
                         <th class="px-4 py-3 font-semibold">Lieu</th>
                         <th class="px-4 py-3 font-semibold">Statut</th>
+                        <th class="px-4 py-3 font-semibold">Vues</th>
                         <th class="px-4 py-3 text-right font-semibold">Actions</th>
                     </tr>
                 </thead>
