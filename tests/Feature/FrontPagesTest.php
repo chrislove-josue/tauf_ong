@@ -54,6 +54,11 @@ class FrontPagesTest extends TestCase
         $this->get(route('events.index'))->assertRedirect(route('posts.index'));
     }
 
+    public function test_media_index_redirects_to_merged_page(): void
+    {
+        $this->get(route('media.index'))->assertRedirect(route('projects.index'));
+    }
+
     public function test_legacy_about_urls_redirect_to_page_sections(): void
     {
         $this->get(route('about.history'))->assertRedirect(route('about.index').'#histoire');
@@ -93,7 +98,6 @@ class FrontPagesTest extends TestCase
             'programs.index',
             'projects.index',
             'posts.index',
-            'media.index',
             'contact',
             'support',
             'join',
