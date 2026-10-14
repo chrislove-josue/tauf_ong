@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Poppins', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+
+    --color-tauf-green: #147a3d;
+    --color-tauf-green-dark: #0e5429;
+    --color-tauf-green-light: #e8f3ec;
+    --color-tauf-gold: #f2b418;
+    --color-tauf-gold-dark: #d99b00;
+    --color-tauf-red: #c1272d;
+    --color-tauf-ink: #14201a;
+    --color-tauf-cream: #faf8f3;
+    --color-tauf-gray: #5b655f;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-white text-tauf-ink antialiased;
+    }
+
+    h1, h2, h3, h4 {
+        @apply font-display;
+    }
+}
+
+@layer components {
+    .container-tauf {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-tauf-green px-6 py-3 text-sm font-semibold text-white transition hover:bg-tauf-green-dark focus:outline-none focus:ring-2 focus:ring-tauf-green focus:ring-offset-2;
+    }
+
+    .btn-gold {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-tauf-gold px-6 py-3 text-sm font-semibold text-tauf-ink transition hover:bg-tauf-gold-dark focus:outline-none focus:ring-2 focus:ring-tauf-gold focus:ring-offset-2;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-tauf-green focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+    }
+
+    .btn-outline-dark {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-tauf-green px-6 py-3 text-sm font-semibold text-tauf-green transition hover:bg-tauf-green hover:text-white focus:outline-none focus:ring-2 focus:ring-tauf-green focus:ring-offset-2;
+    }
+
+    .section-title {
+        @apply font-display text-3xl font-bold leading-tight text-tauf-ink sm:text-4xl;
+    }
+
+    .eyebrow {
+        @apply mb-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-tauf-gold-dark;
+    }
+
+    .prose-tauf {
+        @apply space-y-4 leading-relaxed text-tauf-gray;
+    }
+
+    .prose-tauf h2 { @apply mt-8 text-2xl font-bold text-tauf-ink; }
+    .prose-tauf h3 { @apply mt-6 text-xl font-semibold text-tauf-ink; }
+    .prose-tauf p { @apply text-tauf-gray; }
+    .prose-tauf ul { @apply list-disc space-y-2 pl-6; }
+    .prose-tauf ol { @apply list-decimal space-y-2 pl-6; }
+    .prose-tauf a { @apply text-tauf-green underline; }
+    .prose-tauf img { @apply my-6 rounded-2xl; }
+    .prose-tauf blockquote { @apply border-l-4 border-tauf-gold pl-4 italic text-tauf-ink; }
+
+    .card {
+        @apply rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-lg;
+    }
+
+    .card-media {
+        @apply aspect-[16/10] w-full overflow-hidden rounded-t-2xl;
+    }
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Accordion */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+}
+.accordion-body.open {
+    max-height: 1000px;
+}
+
+/* Quill tweaks for admin */
+.ql-editor {
+    min-height: 320px;
+    font-size: 1rem;
+}
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+    border-color: #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+[x-cloak] { display: none !important; }
