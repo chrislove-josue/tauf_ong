@@ -1,4 +1,4 @@
-@import('layouts.front')
+@extends('layouts.front')
 
 @section('title', "À propos de l'ONG TAUF")
 
