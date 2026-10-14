@@ -15,7 +15,72 @@ document.addEventListener('DOMContentLoaded', () => {
     initConfirm();
     initImagePreview();
     initAdminSidebar();
+    initTestimonialSlider();
 });
+
+function initTestimonialSlider() {
+    document.querySelectorAll('[data-testimonial-slider]').forEach((slider) => {
+        const track = slider.querySelector('.no-scrollbar');
+        if (!track) return;
+        const slides = [...track.children];
+        const dots = [...slider.querySelectorAll('[data-testimonial-dot]')];
+        if (slides.length < 2) return;
+
+        let current = 0;
+        let timer = null;
+        let scrollTimeout;
+
+        const slideLeft = (index) =>
+            slides[index].getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+
+        const updateDots = () => {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('is-active', i === current);
+                dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+            });
+        };
+
+        const goTo = (index) => {
+            current = ((index % slides.length) + slides.length) % slides.length;
+            track.scrollTo({ left: slideLeft(current), behavior: 'smooth' });
+            updateDots();
+        };
+
+        const start = () => {
+            stop();
+            timer = setInterval(() => goTo(current + 1), 6000);
+        };
+
+        const stop = () => {
+            if (timer) clearInterval(timer);
+            timer = null;
+        };
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                goTo(i);
+                start();
+            });
+        });
+
+        track.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const index = Math.round(track.scrollLeft / slides[0].getBoundingClientRect().width);
+                if (index !== current && index >= 0 && index < slides.length) {
+                    current = index;
+                    updateDots();
+                }
+            }, 80);
+        }, { passive: true });
+
+        slider.addEventListener('mouseenter', stop);
+        slider.addEventListener('mouseleave', start);
+
+        updateDots();
+        start();
+    });
+}
 
 function initHeader() {
     const header = document.querySelector('[data-header]');

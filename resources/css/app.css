@@ -89,6 +89,23 @@
     }
 }
 
+/* Hide scrollbars on horizontal carousels */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Testimonial slider indicators */
+[data-testimonial-dot] {
+    @apply h-2.5 w-2.5 rounded-full bg-tauf-green/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-tauf-green focus:ring-offset-2;
+}
+[data-testimonial-dot].is-active {
+    @apply w-6 bg-tauf-green;
+}
+
 /* Scroll reveal */
 .reveal {
     opacity: 0;

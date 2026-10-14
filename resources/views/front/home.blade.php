@@ -228,28 +228,37 @@
                 @if ($testimonials->isEmpty())
                     <p class="rounded-2xl bg-white p-6 text-sm text-tauf-gray">Les témoignages seront bientôt disponibles.</p>
                 @else
-                    <div data-slider class="grid">
-                        @foreach ($testimonials as $t)
-                            <div data-slide class="col-start-1 row-start-1 transition-opacity duration-700 {{ $loop->first ? '' : 'pointer-events-none opacity-0' }}">
-                                <div class="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
-                                    <blockquote class="flex h-full flex-col justify-between">
-                                        <div>
-                                            <svg class="h-10 w-10 text-tauf-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h4v4H9c0 2 0 3 2 4v2c-3 0-4-2-4-5V7zm8 0h4v4h-2c0 2 0 3 2 4v2c-3 0-4-2-4-5V7z"/></svg>
-                                            <p class="mt-6 text-base leading-relaxed text-tauf-ink">{{ $t->content }}</p>
-                                        </div>
-                                        <footer class="mt-8 flex items-center gap-4">
-                                            <img src="{{ upload_url($t->photo, 'images/placeholder.svg') }}" alt="{{ $t->name }}" class="h-12 w-12 rounded-full object-cover ring-2 ring-tauf-gold/30">
+                    <div data-testimonial-slider>
+                        <div class="no-scrollbar flex snap-x snap-mandatory overflow-x-auto">
+                            @foreach ($testimonials as $t)
+                                <div class="w-full shrink-0 snap-start sm:px-2">
+                                    <div class="h-full rounded-3xl bg-white p-8 shadow-sm sm:p-10">
+                                        <blockquote class="flex h-full flex-col justify-between">
                                             <div>
-                                                <p class="font-display text-base font-bold text-tauf-ink">{{ $t->name }}</p>
-                                                @if ($t->role)
-                                                    <p class="text-sm text-tauf-gray">{{ $t->role }}</p>
-                                                @endif
+                                                <svg class="h-10 w-10 text-tauf-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h4v4H9c0 2 0 3 2 4v2c-3 0-4-2-4-5V7zm8 0h4v4h-2c0 2 0 3 2 4v2c-3 0-4-2-4-5V7z"/></svg>
+                                                <p class="mt-6 text-base leading-relaxed text-tauf-ink">{{ $t->content }}</p>
                                             </div>
-                                        </footer>
-                                    </blockquote>
+                                            <footer class="mt-8 flex items-center gap-4">
+                                                <img src="{{ upload_url($t->photo, 'images/placeholder.svg') }}" alt="{{ $t->name }}" class="h-12 w-12 rounded-full object-cover ring-2 ring-tauf-gold/30">
+                                                <div>
+                                                    <p class="font-display text-base font-bold text-tauf-ink">{{ $t->name }}</p>
+                                                    @if ($t->role)
+                                                        <p class="text-sm text-tauf-gray">{{ $t->role }}</p>
+                                                    @endif
+                                                </div>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
                                 </div>
+                            @endforeach
+                        </div>
+                        @if ($testimonials->count() > 1)
+                            <div class="mt-6 flex justify-center gap-2">
+                                @foreach ($testimonials as $i => $t)
+                                    <button type="button" data-testimonial-dot="{{ $i }}" class="{{ $loop->first ? 'is-active' : '' }}" aria-label="Voir le témoignage {{ $i + 1 }}" aria-current="{{ $loop->first ? 'true' : 'false' }}"></button>
+                                @endforeach
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                 @endif
             </div>
