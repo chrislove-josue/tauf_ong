@@ -2,23 +2,23 @@
     $is = fn (string ...$names) => request()->routeIs(...$names);
 @endphp
 
-{{-- Barre supérieure --}}
-<div class="hidden bg-tauf-green-dark text-white lg:block">
-    <div class="container-tauf flex h-10 items-center justify-between text-xs">
-        <div class="flex items-center gap-5">
-            <span class="inline-flex items-center gap-1.5">
-                <svg class="h-3.5 w-3.5 text-tauf-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 1114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                {{ tauf_setting('contact_address', 'Cotonou, Bénin') }}
-            </span>
-            <span class="inline-flex items-center gap-1.5">
-                <svg class="h-3.5 w-3.5 text-tauf-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
-                {{ tauf_setting('contact_phone', '+229 00 00 00 00') }}
-            </span>
-            <span class="inline-flex items-center gap-1.5">
-                <svg class="h-3.5 w-3.5 text-tauf-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
-                {{ tauf_setting('contact_email', 'contact@ongtauf.org') }}
-            </span>
-        </div>
+<div class="sticky top-0 z-50">
+    <div class="bg-tauf-green-dark text-white">
+        <div class="container-tauf flex h-10 items-center justify-between gap-4 text-xs">
+            <div class="flex items-center gap-5">
+                <span class="hidden items-center gap-1.5 sm:inline-flex">
+                    <svg class="h-3.5 w-3.5 text-tauf-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 1114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    {{ tauf_setting('contact_address', 'Cotonou, Bénin') }}
+                </span>
+                <span class="inline-flex items-center gap-1.5">
+                    <svg class="h-3.5 w-3.5 text-tauf-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+                    {{ tauf_setting('contact_phone', '+229 00 00 00 00') }}
+                </span>
+                <span class="hidden items-center gap-1.5 md:inline-flex">
+                    <svg class="h-3.5 w-3.5 text-tauf-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+                    {{ tauf_setting('contact_email', 'contact@ongtauf.org') }}
+                </span>
+            </div>
         <div class="flex items-center gap-3">
             @foreach (['facebook_url' => 'facebook', 'instagram_url' => 'instagram', 'linkedin_url' => 'linkedin', 'youtube_url' => 'youtube'] as $key => $name)
                 @if (tauf_setting($key))
@@ -29,10 +29,9 @@
             @endforeach
         </div>
     </div>
-</div>
 
-{{-- Navigation principale --}}
-<header data-header class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur transition-shadow [&.is-scrolled]:shadow-md">
+    {{-- Navigation principale --}}
+<header data-header class="w-full border-b border-gray-100 bg-white/95 backdrop-blur transition-shadow [&.is-scrolled]:shadow-md">
     <div class="container-tauf flex h-20 items-center justify-between gap-4">
         <a href="{{ route('home') }}" class="flex shrink-0 items-center gap-3">
             <img src="{{ asset('logo.jpg') }}" alt="{{ $siteName ?? 'ONG TAUF' }}" class="h-14 w-14 rounded-full object-cover ring-2 ring-tauf-gold">
@@ -110,4 +109,5 @@
             <a href="{{ route('support') }}" class="btn-gold mt-2 w-full">Faire un don</a>
         </div>
     </div>
-</header>
+    </header>
+</div>
