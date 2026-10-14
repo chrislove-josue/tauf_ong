@@ -225,7 +225,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($albums as $i => $album) {
-            $created = Album::updateOrCreate(['slug' => Str::slug($album['name'])], $album + ['order' => $i, 'views' => rand(100, 800)]);
+            $created = Album::updateOrCreate(['slug' => Str::slug($album['name'])], $album + ['order' => $i]);
 
             for ($j = 1; $j <= 4; $j++) {
                 Media::updateOrCreate(
