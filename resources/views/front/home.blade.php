@@ -266,6 +266,23 @@
         </div>
     </section>
 
+    @if ($partners->isNotEmpty())
+        <section class="container-tauf py-16 sm:py-20">
+            <div class="mb-10 text-center">
+                <span class="eyebrow justify-center"><span class="h-px w-8 bg-tauf-gold"></span>Nos partenaires<span class="h-px w-8 bg-tauf-gold"></span></span>
+                <h2 class="section-title">Nos partenaires</h2>
+            </div>
+            <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+                @foreach ($partners as $partner)
+                    <a href="{{ $partner->url ?: '#' }}" @if ($partner->url) target="_blank" rel="noopener" @endif
+                       class="flex h-28 items-center justify-center rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-lg">
+                        <img src="{{ upload_url($partner->logo) }}" alt="{{ $partner->name }}" class="max-h-14 max-w-full object-contain">
+                    </a>
+                @endforeach
+            </div>
+        </section>
+    @endif
+
     {{-- Soutien --}}
     <section class="bg-tauf-green-dark py-16 text-center text-white sm:py-20">
         <div class="container-tauf">

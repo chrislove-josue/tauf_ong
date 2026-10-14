@@ -96,12 +96,7 @@
         <div class="container-tauf max-h-[80vh] space-y-1 overflow-y-auto py-4">
             <a href="{{ route('home') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Accueil</a>
             <div class="border-t border-gray-100 pt-1"></div>
-            <p class="px-4 pt-2 text-xs font-bold uppercase tracking-wider text-gray-400">À propos</p>
-            <a href="{{ route('about.index') }}#presentation" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Présentation</a>
-            <a href="{{ route('about.index') }}#histoire" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Notre histoire</a>
-            <a href="{{ route('about.index') }}#mission" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Mission, vision, valeurs</a>
-            <a href="{{ route('about.index') }}#organisation" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Organisation & gouvernance</a>
-            <div class="border-t border-gray-100 pt-1"></div>
+            <a href="{{ route('about.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">À propos</a>
             <a href="{{ route('programs.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Programmes</a>
             <a href="{{ route('projects.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Réalisations</a>
             <a href="{{ route('posts.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Actualités</a>
