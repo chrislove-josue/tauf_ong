@@ -4,17 +4,12 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Album;
-use App\Models\Media;
 
 class MediaController extends Controller
 {
     public function index()
     {
-        return view('front.media.index', [
-            'albums' => Album::withCount('images')->orderBy('order')->get(),
-            'documents' => Media::where('type', 'document')->orderBy('order')->get(),
-            'videos' => Media::where('type', 'video')->orderBy('order')->get(),
-        ]);
+        return redirect(route('projects.index'));
     }
 
     public function album(Album $album)
