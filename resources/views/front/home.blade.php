@@ -113,7 +113,7 @@
                 <h2 class="section-title">Ce que nous faisons</h2>
                 <p class="mx-auto mt-4 max-w-2xl text-tauf-gray">Des initiatives éducatives, culturelles et sociales au service des jeunes et des communautés.</p>
             </div>
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($programs as $program)
                     <a href="{{ route('programs.show', $program) }}" class="card reveal group overflow-hidden">
                         <div class="card-media bg-tauf-green-light">
