@@ -29,6 +29,7 @@
             @endforeach
         </div>
     </div>
+</div>
 
     {{-- Navigation principale --}}
 <header data-header class="w-full border-b border-gray-100 bg-white/95 backdrop-blur transition-shadow [&.is-scrolled]:shadow-md">
