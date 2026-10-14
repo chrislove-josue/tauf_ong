@@ -15,7 +15,6 @@ Route::get('/a-propos', [Front\AboutController::class, 'index'])->name('about.in
 Route::get('/a-propos/notre-histoire', [Front\AboutController::class, 'history'])->name('about.history');
 Route::get('/a-propos/mission-vision-valeurs', [Front\AboutController::class, 'mission'])->name('about.mission');
 Route::get('/a-propos/organisation', [Front\AboutController::class, 'organisation'])->name('about.organisation');
-Route::get('/a-propos/partenaires', [Front\AboutController::class, 'partners'])->name('about.partners');
 
 Route::get('/programmes', [Front\ProgramController::class, 'index'])->name('programs.index');
 Route::get('/programmes/{program}', [Front\ProgramController::class, 'show'])->name('programs.show');

@@ -54,7 +54,6 @@ class FrontPagesTest extends TestCase
         $this->get(route('about.history'))->assertRedirect(route('about.index').'#histoire');
         $this->get(route('about.mission'))->assertRedirect(route('about.index').'#mission');
         $this->get(route('about.organisation'))->assertRedirect(route('about.index').'#organisation');
-        $this->get(route('about.partners'))->assertRedirect(route('about.index').'#partenaires');
     }
 
     public function test_unknown_slug_returns_404(): void

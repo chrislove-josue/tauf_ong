@@ -55,7 +55,6 @@
                     <a href="{{ route('about.index') }}#histoire" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Notre histoire</a>
                     <a href="{{ route('about.index') }}#mission" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Mission, vision, valeurs</a>
                     <a href="{{ route('about.index') }}#organisation" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Organisation & gouvernance</a>
-                    <a href="{{ route('about.index') }}#partenaires" class="block px-4 py-2.5 text-sm hover:bg-tauf-green-light hover:text-tauf-green">Nos partenaires</a>
                 </div>
             </div>
 
@@ -104,7 +103,6 @@
             <a href="{{ route('about.index') }}#histoire" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Notre histoire</a>
             <a href="{{ route('about.index') }}#mission" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Mission, vision, valeurs</a>
             <a href="{{ route('about.index') }}#organisation" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Organisation & gouvernance</a>
-            <a href="{{ route('about.index') }}#partenaires" class="block rounded-lg px-4 py-2.5 hover:bg-tauf-green-light">Nos partenaires</a>
             <div class="border-t border-gray-100 pt-1"></div>
             <a href="{{ route('programs.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Programmes</a>
             <a href="{{ route('projects.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Réalisations</a>

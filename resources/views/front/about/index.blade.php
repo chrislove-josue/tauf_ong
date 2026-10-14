@@ -14,7 +14,6 @@
             <a href="#histoire" class="rounded-full border border-gray-200 px-4 py-2 text-xs font-semibold text-tauf-ink transition hover:border-tauf-green hover:text-tauf-green">Notre histoire</a>
             <a href="#mission" class="rounded-full border border-gray-200 px-4 py-2 text-xs font-semibold text-tauf-ink transition hover:border-tauf-green hover:text-tauf-green">Mission, vision, valeurs</a>
             <a href="#organisation" class="rounded-full border border-gray-200 px-4 py-2 text-xs font-semibold text-tauf-ink transition hover:border-tauf-green hover:text-tauf-green">Organisation & gouvernance</a>
-            <a href="#partenaires" class="rounded-full border border-gray-200 px-4 py-2 text-xs font-semibold text-tauf-ink transition hover:border-tauf-green hover:text-tauf-green">Nos partenaires</a>
         </div>
     </nav>
 
@@ -138,30 +137,6 @@
                     <p class="rounded-2xl bg-white p-8 text-center text-tauf-gray">Les informations sur l'organisation et la gouvernance seront bientôt disponibles.</p>
                 @endforelse
             </div>
-        </div>
-    </section>
-
-    <section id="partenaires" class="container-tauf scroll-mt-24 py-16 sm:py-20">
-        <span class="eyebrow"><span class="h-px w-8 bg-tauf-gold"></span>Nos partenaires</span>
-        <p class="mt-2 max-w-2xl text-sm text-tauf-gray">Ils soutiennent notre mission et nos programmes.</p>
-        <div class="mt-8 space-y-12">
-            @forelse ($partners as $category => $items)
-                <div>
-                    @if ($category)
-                        <h2 class="mb-8 font-display text-xl font-bold text-tauf-ink">{{ $category }}</h2>
-                    @endif
-                    <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-                        @foreach ($items as $partner)
-                            <a href="{{ $partner->url ?: '#' }}" @if ($partner->url) target="_blank" rel="noopener" @endif
-                               class="flex h-32 items-center justify-center rounded-2xl border border-gray-100 bg-white p-6 shadow-sm grayscale transition hover:shadow-lg hover:grayscale-0">
-                                <img src="{{ upload_url($partner->logo) }}" alt="{{ $partner->name }}" class="max-h-16 max-w-full object-contain">
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-            @empty
-                <p class="rounded-2xl bg-tauf-cream p-8 text-center text-tauf-gray">La liste de nos partenaires sera bientôt disponible.</p>
-            @endforelse
         </div>
     </section>
 
