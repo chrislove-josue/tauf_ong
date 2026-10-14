@@ -38,9 +38,7 @@
             <h3 class="font-display text-base font-bold text-white">Liens rapides</h3>
             <ul class="mt-5 space-y-2.5 text-sm">
                 <li><a href="{{ route('about.index') }}" class="transition hover:text-tauf-gold">À propos de nous</a></li>
-                <li><a href="{{ route('projects.index') }}" class="transition hover:text-tauf-gold">Nos réalisations</a></li>
-                <li><a href="{{ route('posts.index') }}" class="transition hover:text-tauf-gold">Actualités & événements</a></li>
-                <li><a href="{{ route("media.index") }}" class="transition hover:text-tauf-gold">Galerie</a></li>
+                <li><a href="{{ route('projects.index') }}" class="transition hover:text-tauf-gold">Réalisations & galerie</a></li>
                 <li><a href="{{ route('join') }}" class="transition hover:text-tauf-gold">Nous rejoindre</a></li>
             </ul>
         </div>

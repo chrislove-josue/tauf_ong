@@ -7,7 +7,7 @@
         :title="$album->name"
         :subtitle="$album->description"
         :image="$album->cover"
-        :crumbs="['Médiathèque' => route('media.index'), $album->name => null]" />
+        :crumbs="['Réalisations & galerie' => route('projects.index'), $album->name => null]" />
 
     <section class="container-tauf py-16">
         <div class="mb-6 flex flex-wrap items-center justify-between gap-4 text-sm text-tauf-gray">
