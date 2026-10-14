@@ -228,39 +228,23 @@
                 @if ($testimonials->isEmpty())
                     <p class="rounded-2xl bg-white p-6 text-sm text-tauf-gray">Les témoignages seront bientôt disponibles.</p>
                 @else
-                    <div data-slider class="relative overflow-hidden rounded-3xl bg-white shadow-sm">
-                        <div data-slides class="flex transition-transform duration-500 ease-in-out">
-                            @foreach ($testimonials as $testimonial)
-                                <div class="min-w-full p-8 sm:p-10">
-                                    <blockquote class="flex h-full flex-col justify-between">
-                                        <div>
-                                            <svg class="h-10 w-10 text-tauf-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h4v4H9c0 2 0 3 2 4v2c-3 0-4-2-4-5V7zm8 0h4v4h-2c0 2 0 3 2 4v2c-3 0-4-2-4-5V7z"/></svg>
-                                            <p class="mt-6 text-base leading-relaxed text-tauf-ink">{{ $testimonial->content }}</p>
-                                        </div>
-                                        <footer class="mt-8 flex items-center gap-4">
-                                            <img src="{{ upload_url($testimonial->photo, "images/placeholder.svg") }}" alt="{{ $testimonial->name }}" class="h-12 w-12 rounded-full object-cover ring-2 ring-tauf-gold/30">
-                                            <div>
-                                                <p class="font-display text-base font-bold text-tauf-ink">{{ $testimonial->name }}</p>
-                                                @if ($testimonial->role)
-                                                    <p class="text-sm text-tauf-gray">{{ $testimonial->role }}</p>
-                                                @endif
-                                            </div>
-                                        </footer>
-                                    </blockquote>
-                                </div>
-                            @endforeach
-                        </div>
-                        @if ($testimonials->count() > 1)
-                            <div class="absolute inset-x-0 bottom-6 flex items-center justify-center gap-3">
-                                <button data-prev class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white/90 text-tauf-ink shadow-sm transition hover:bg-tauf-green hover:text-white">
-                                    <svg class="h-5 w-5 -translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-                                </button>
-                                <div data-dots class="flex items-center gap-2"></div>
-                                <button data-next class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white/90 text-tauf-ink shadow-sm transition hover:bg-tauf-green hover:text-white">
-                                    <svg class="h-5 w-5 translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
-                                </button>
+                    @php $t = $testimonials->first(); @endphp
+                    <div class="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
+                        <blockquote class="flex h-full flex-col justify-between">
+                            <div>
+                                <svg class="h-10 w-10 text-tauf-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h4v4H9c0 2 0 3 2 4v2c-3 0-4-2-4-5V7zm8 0h4v4h-2c0 2 0 3 2 4v2c-3 0-4-2-4-5V7z"/></svg>
+                                <p class="mt-6 text-base leading-relaxed text-tauf-ink">{{ $t->content }}</p>
                             </div>
-                        @endif
+                            <footer class="mt-8 flex items-center gap-4">
+                                <img src="{{ upload_url($t->photo, 'images/placeholder.svg') }}" alt="{{ $t->name }}" class="h-12 w-12 rounded-full object-cover ring-2 ring-tauf-gold/30">
+                                <div>
+                                    <p class="font-display text-base font-bold text-tauf-ink">{{ $t->name }}</p>
+                                    @if ($t->role)
+                                        <p class="text-sm text-tauf-gray">{{ $t->role }}</p>
+                                    @endif
+                                </div>
+                            </footer>
+                        </blockquote>
                     </div>
                 @endif
             </div>
