@@ -11,7 +11,7 @@
         :title="$event->title"
         :subtitle="$event->excerpt"
         :image="$event->cover"
-        :crumbs="['Événements' => route('events.index'), Str::limit($event->title, 40) => null]" />
+        :crumbs="['Actualités & événements' => route('posts.index'), Str::limit($event->title, 40) => null]" />
 
     <section class="container-tauf py-16">
         <div class="grid gap-12 lg:grid-cols-3">

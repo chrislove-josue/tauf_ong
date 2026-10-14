@@ -19,7 +19,6 @@ class SitemapController extends Controller
             ->push(['loc' => route('programs.index'), 'priority' => '0.8'])
             ->push(['loc' => route('projects.index'), 'priority' => '0.8'])
             ->push(['loc' => route('posts.index'), 'priority' => '0.8'])
-            ->push(['loc' => route('events.index'), 'priority' => '0.7'])
             ->push(['loc' => route('media.index'), 'priority' => '0.6'])
             ->push(['loc' => route('contact'), 'priority' => '0.7']);
 

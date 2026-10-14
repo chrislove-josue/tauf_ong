@@ -107,7 +107,6 @@
             <a href="{{ route('programs.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Programmes</a>
             <a href="{{ route('projects.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Réalisations</a>
             <a href="{{ route('posts.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Actualités</a>
-            <a href="{{ route('events.index') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Événements</a>
             <a href="{{ route("media.index") }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Galerie</a>
             <a href="{{ route('join') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Nous rejoindre</a>
             <a href="{{ route('contact') }}" class="block rounded-lg px-4 py-3 font-semibold hover:bg-tauf-green-light">Contact</a>
