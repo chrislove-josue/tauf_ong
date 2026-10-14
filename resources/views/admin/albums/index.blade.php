@@ -16,7 +16,7 @@
                     <img src="{{ upload_url($album->cover) }}" alt="" class="h-36 w-full object-cover">
                     <div class="p-4">
                         <p class="font-semibold text-tauf-ink">{{ $album->name }}</p>
-                        <p class="text-xs text-tauf-gray">{{ $album->media_count }} média(s)</p>
+                        <p class="text-xs text-tauf-gray">{{ $album->media_count }} média(s) · {{ number_format($album->views, 0, ',', ' ') }} vue(s)</p>
                         <div class="mt-3 flex gap-2">
                             <a href="{{ route('admin.albums.edit', $album) }}" class="rounded-lg bg-tauf-green-light px-3 py-1.5 text-xs font-semibold text-tauf-green">Modifier</a>
                             <form action="{{ route('admin.albums.destroy', $album) }}" method="POST" data-confirm="Supprimer cet album ?">
