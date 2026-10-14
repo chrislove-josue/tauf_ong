@@ -18,6 +18,7 @@
                         <th class="px-4 py-3 font-semibold">Statut</th>
                         <th class="px-4 py-3 font-semibold">Mise en avant</th>
                         <th class="px-4 py-3 font-semibold">Ordre</th>
+                        <th class="px-4 py-3 font-semibold">Vues</th>
                         <th class="px-4 py-3 text-right font-semibold">Actions</th>
                     </tr>
                 </thead>
@@ -36,6 +37,7 @@
                             <td class="px-4 py-3"><span class="rounded-full px-2.5 py-1 text-[11px] font-bold {{ $program->status === 'publie' ? 'bg-tauf-green-light text-tauf-green' : 'bg-gray-100 text-gray-500' }}">{{ ucfirst($program->status) }}</span></td>
                             <td class="px-4 py-3">{!! $program->featured ? '<span class="text-tauf-green">Oui</span>' : '<span class="text-tauf-gray">Non</span>' !!}</td>
                             <td class="px-4 py-3 text-tauf-gray">{{ $program->order }}</td>
+                            <td class="px-4 py-3 text-tauf-gray">{{ number_format($program->views, 0, ',', ' ') }}</td>
                             <td class="px-4 py-3">
                                 <div class="flex justify-end gap-2">
                                     <a href="{{ route('programs.show', $program) }}" target="_blank" class="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold hover:border-tauf-green hover:text-tauf-green">Voir</a>
@@ -48,7 +50,7 @@
                             </td>
                         </tr>
                     @empty
-                        <tr><td colspan="5" class="px-4 py-10 text-center text-tauf-gray">Aucun programme.</td></tr>
+                        <tr><td colspan="6" class="px-4 py-10 text-center text-tauf-gray">Aucun programme.</td></tr>
                     @endforelse
                 </tbody>
             </table>
