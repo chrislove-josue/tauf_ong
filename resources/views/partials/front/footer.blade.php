@@ -10,7 +10,7 @@
 @endphp
 
 <footer class="relative mt-20 overflow-hidden bg-tauf-green-dark text-white/80">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px); background-size: 28px 28px;"></div>
+    <div class="pointer-events-none absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px); background-size: 28px 28px;"></div>
     <div class="container-tauf relative grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
             <div class="flex items-center gap-3">
@@ -92,7 +92,7 @@
             <p>
               Conçu et développé par 
         <span class="text-white">
-            <a href="https://wa.me/22998123353" target="_blank" rel="noopener noreferrer">CJN TECH</a>
+            <a href="https://wa.me/22998123353" target="_blank" rel="noopener noreferrer" class="underline decoration-tauf-gold underline-offset-2 transition hover:text-tauf-gold">CJN TECH</a>
         </span>. 
             </p>
         </div>
