@@ -85,9 +85,17 @@
         </div>
     </div>
 
-    <div class="border-t border-white/10">
+    <div class="border-t border-white/10  text-md ">
         <div class="container-tauf flex flex-col items-center justify-between gap-3 py-5 text-xs sm:flex-row">
-            <p>© {{ date('Y') }} {{ $siteName ?? 'ONG TAUF' }}. Tous droits réservés.</p>
+            <p>© {{ date('Y') }} {{ $siteName ?? 'ONG TAUF' }}. Tous droits réservés</p>
+        <div>
+            <p>
+              Conçu et développé par 
+        <span class="text-white">
+            <a href="https://wa.me/22998123353" target="_blank" rel="noopener noreferrer">CJN TECH</a>
+        </span>. 
+            </p>
+        </div>
             <div class="flex flex-wrap items-center justify-center gap-4">
                 <a href="{{ route('legal') }}" class="transition hover:text-tauf-gold">Mentions légales</a>
                 <a href="{{ route('privacy') }}" class="transition hover:text-tauf-gold">Politique de confidentialité</a>
