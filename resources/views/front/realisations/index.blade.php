@@ -58,7 +58,7 @@
                 <h2 class="section-title mb-8 mt-16">Vidéos</h2>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     @foreach ($videos as $video)
-                        <a href="{{ $video->url ?: upload_url($video->file_path) }}" target="_blank" class="card group overflow-hidden">
+                        <a href="{{ $video->url ?: upload_url($video->file_path) }}" class="card group overflow-hidden">
                             <div class="card-media relative bg-tauf-ink">
                                 <img src="{{ upload_url($video->cover ?? null) }}" alt="" class="h-full w-full object-cover opacity-60">
                                 <span class="absolute inset-0 flex items-center justify-center">
