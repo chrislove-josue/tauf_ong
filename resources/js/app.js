@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initImagePreview();
     initAdminSidebar();
     initTestimonialSlider();
+    initVideoModals();
 });
 
 function initTestimonialSlider() {
@@ -246,6 +247,68 @@ function initImagePreview() {
                 preview.classList.remove('hidden');
             }
         });
+    });
+}
+
+function initVideoModals() {
+    const overlay = document.querySelector('[data-video-modal-overlay]');
+    if (!overlay) return;
+
+    const frame = overlay.querySelector('[data-video-frame]');
+    const titleEl = overlay.querySelector('[data-video-title]');
+    const closeBtn = overlay.querySelector('[data-video-modal-close]');
+    let lastFocus = null;
+
+    const youtubeId = (url) => {
+        const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/);
+        return match ? match[1] : null;
+    };
+
+    const open = (src, title) => {
+        lastFocus = document.activeElement;
+        titleEl.textContent = title || '';
+        frame.innerHTML = '';
+
+        const ytId = youtubeId(src);
+        if (ytId) {
+            frame.innerHTML = `<iframe class="aspect-video w-full" src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" title="${title || 'Vidéo'}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+        } else {
+            const video = document.createElement('video');
+            video.className = 'aspect-video w-full';
+            video.controls = true;
+            video.playsInline = true;
+            video.autoplay = true;
+            video.preload = 'metadata';
+            video.src = src;
+            frame.appendChild(video);
+        }
+
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+        closeBtn.focus();
+    };
+
+    const close = () => {
+        const video = frame.querySelector('video');
+        if (video) video.pause();
+        frame.innerHTML = '';
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+        lastFocus?.focus();
+    };
+
+    document.querySelectorAll('[data-video-modal]').forEach((trigger) => {
+        trigger.addEventListener('click', () => open(trigger.dataset.videoModal, trigger.dataset.videoTitle));
+    });
+
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) close();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !overlay.classList.contains('hidden')) close();
     });
 }
 

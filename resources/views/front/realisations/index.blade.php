@@ -58,15 +58,15 @@
                 <h2 class="section-title mb-8 mt-16">Vidéos</h2>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     @foreach ($videos as $video)
-                        <a href="{{ $video->url ?: upload_url($video->file_path) }}" class="card group overflow-hidden">
+                        <button type="button" data-video-modal="{{ $video->url ?: upload_url($video->file_path) }}" data-video-title="{{ $video->title }}" class="card group cursor-pointer overflow-hidden text-left">
                             <div class="card-media relative bg-tauf-ink">
-                                <img src="{{ upload_url($video->cover ?? null) }}" alt="" class="h-full w-full object-cover opacity-60">
+                                <img src="{{ upload_url($video->cover ?? null) }}" alt="{{ $video->title }}" class="h-full w-full object-cover opacity-60">
                                 <span class="absolute inset-0 flex items-center justify-center">
-                                    <span class="flex h-14 w-14 items-center justify-center rounded-full bg-tauf-red text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                                    <span class="flex h-14 w-14 items-center justify-center rounded-full bg-tauf-red text-white shadow-lg transition group-hover:scale-110"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                                 </span>
                             </div>
                             <div class="p-5"><h3 class="font-display font-bold text-tauf-ink">{{ $video->title }}</h3></div>
-                        </a>
+                        </button>
                     @endforeach
                 </div>
             @endif
@@ -91,4 +91,14 @@
             @endif
         </div>
     </section>
+
+    <div data-video-modal-overlay class="fixed inset-0 z-[80] hidden items-center justify-center bg-tauf-ink/90 p-4 backdrop-blur-sm">
+        <div class="relative w-full max-w-4xl">
+            <button type="button" data-video-modal-close class="absolute -top-10 right-0 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" aria-label="Fermer la vidéo">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+            <div data-video-frame class="overflow-hidden rounded-2xl bg-black shadow-2xl"></div>
+            <p data-video-title class="mt-3 text-center font-display text-sm font-bold text-white/90"></p>
+        </div>
+    </div>
 @endsection
