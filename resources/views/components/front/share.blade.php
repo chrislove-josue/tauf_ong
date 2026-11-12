@@ -17,6 +17,6 @@
         <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><use href="#icon-linkedin"/></svg>
     </a>
     <a href="https://wa.me/?text={{ urlencode($shareTitle.' '.$shareUrl) }}" target="_blank" rel="noopener" aria-label="Partager sur WhatsApp" class="flex h-9 w-9 items-center justify-center rounded-full bg-tauf-green-light text-tauf-green transition hover:bg-tauf-green hover:text-white">
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 21l2-5.1A8.5 8.5 0 1121 11.5z"/></svg>
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><use href="#icon-whatsapp"/></svg>
     </a>
 </div>
