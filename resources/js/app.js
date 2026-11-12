@@ -280,6 +280,10 @@ function initVideoModals() {
             video.autoplay = true;
             video.preload = 'metadata';
             video.src = src;
+            // Cacher le bouton de téléchargement et les contrôles téléchargeables
+            video.setAttribute('controlslist', 'nodownload noplaybackrate');
+            video.disablePictureInPicture = true;
+            video.disableRemotePlayback = true;
             frame.appendChild(video);
         }
 
@@ -304,6 +308,8 @@ function initVideoModals() {
     });
 
     closeBtn.addEventListener('click', close);
+    // Bloquer "Enregistrer la vidéo sous…" via le clic droit dans le lecteur
+    frame.addEventListener('contextmenu', (e) => e.preventDefault());
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) close();
     });
